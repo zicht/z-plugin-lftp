@@ -1,0 +1,14 @@
+{
+    "name": "zicht/z-plugin-lftp",
+    "description": "LFTP sync plugin for Z",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philip Bergman",
+            "email": "philip@zicht.nl"
+        }
+    ],
+    "require": {
+
+    }
+}
