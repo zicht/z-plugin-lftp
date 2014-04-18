@@ -1,0 +1,24 @@
+# Synchronization options
+sync:
+    # lft sync options
+    options:        --reverse --only-newer --verbose --delete --parallel=3
+    # File containing exclusion rules
+    exclude_file:   "rsync.exclude"
+tasks:
+    # Synchronize the build dir to the remote environment
+    _sync.sync: |
+        lftp -f
+        open $(ftp.domain)
+        user $(ftp.username) $(ftp.password)
+        lcd  $(tasks.build)
+        cd $(envs[target_env].root)
+        mirror $(sync.options) $(sync.exclude_file ? sync.exludes)
+
+    # Simulate a sync of the build dir to the remote environment
+    _sync.simulate: |
+        lftp -f
+        open $(ftp.domain)
+        user $(ftp.username) $(ftp.password)
+        lcd  $(tasks.build)
+        cd $(envs[target_env].root)
+        mirror $(sync.options) $(sync.exclude_file ? sync.exludes) --dry-run
