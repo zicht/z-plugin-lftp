@@ -5,4 +5,3 @@ the phonecall from 1997 that they wanted their technology back, then you can use
 this plugin in a similar fashion to `rsync`.
 
 # Maintainer(s)
-* Philip Bergman <philip@zicht.nl>
