@@ -4,11 +4,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Philip Bergman",
-            "email": "philip@zicht.nl"
+            "name": "Zicht Online",
+            "email": "info@zicht.nl"
         }
     ],
     "require": {
-
+        "zicht/z": "*"
+    },
+    "conflict": {
+        "zicht/z-plugin-deploy": "<=1.0.1"
     }
 }

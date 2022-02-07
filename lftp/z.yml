@@ -12,7 +12,7 @@ tasks:
         lftp -f
         open $(ftp.domain)
         user $(ftp.username) $(ftp.password)
-        lcd  $(tasks.build)
+        lcd  $(build.dir)
         cd $(envs[target_env].root)
         mirror $(sync.options) $(sync.exclude_file ? sync.exludes)
 
@@ -21,6 +21,6 @@ tasks:
         lftp -f
         open $(ftp.domain)
         user $(ftp.username) $(ftp.password)
-        lcd  $(tasks.build)
+        lcd  $(build.dir)
         cd $(envs[target_env].root)
         mirror $(sync.options) $(sync.exclude_file ? sync.exludes) --dry-run
